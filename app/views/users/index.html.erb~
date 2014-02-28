@@ -1,0 +1,34 @@
+<h1>Listing users</h1>
+<%= link_to "Hyderabad",'#',:class =>"retrive_records",:loc => "hyd" %> | 
+<%= link_to "Ban",'#',:class =>"retrive_records" ,:loc => "ban"%> 
+<div id="content">
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Loc</th>
+      <th>Dob</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.loc %></td>
+        <td><%= user.dob %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New User', new_user_path %>

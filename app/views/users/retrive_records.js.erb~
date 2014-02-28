@@ -1,0 +1,1 @@
+$('#content').html("<%= render :partial => "retrive_records" %>")

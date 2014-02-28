@@ -1,0 +1,28 @@
+
+<table border=1 >
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Loc</th>
+      <th>Dob</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+<% 100.times do %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.loc %></td>
+        <td><%= user.dob %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+<% end %>
+  </tbody>
+</table>
